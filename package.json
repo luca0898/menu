@@ -1,5 +1,5 @@
 {
-  "name": "cardapio",
+  "name": "menu",
   "version": "1.0.0",
   "description": "A simple API",
   "main": "./src/index.js",
