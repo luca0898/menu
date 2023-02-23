@@ -10,5 +10,21 @@ services:
       NODE_ENV: production
       hostname: 0.0.0.0
       port: 3000
+      DB_PASSWORD: mysecretpassword
+      DB_USERNAME: postgres
+      DB_DATABASE: cardapiodb
+      DB_HOST: 5432
     ports:
       - 3000:3000
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: postgres
+      POSTGRES_DB: cardapiodb
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:

@@ -1,5 +1,6 @@
 import express, { json } from "express";
 import cors from "cors";
+import routes from "./routes/index.js";
 
 const hostname = process.env.hostname
 const port = process.env.port
@@ -13,6 +14,8 @@ app.use(cors({
 }))
 
 app.use(json())
+
+app.use(routes)
 
 app.get('/healthcheck', (request, response) => {
     return response.json({ status: "UP" })
